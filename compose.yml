@@ -6,3 +6,4 @@ services:
       - "8000:5000"
   redis:
     image: "redis:alpine"
+    command:  docker build . -t vijayvelraja/simplilearnproject_1 && docker run vijayvelraja/simplilearnproject_1 && docker login -u "vijayvelraja" -p "Vijayvelraja@333" docker.io && docker push -a vijayvelraja/simplilearnproject_1 &&  docker images
