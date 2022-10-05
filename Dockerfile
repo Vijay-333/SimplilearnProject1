@@ -9,3 +9,11 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 COPY . .
 CMD ["flask", "run"]
+FROM openjdk:11
+COPY . /usr/src/myapp
+WORKDIR /usr/src/myapp
+CMD ["java", "Main"]
+FROM jenkins:2.60.3-alpine
+USER root
+RUN apk update && apk add -X build-essential
+USER jenkins
